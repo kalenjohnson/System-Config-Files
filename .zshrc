@@ -35,5 +35,6 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin
 # Kalen's Customizations
 alias ...='nocorrect ...'
 alias gc='git commit'
+alias gs='git status'
 alias ga='git add'
 alias gp='git push'
