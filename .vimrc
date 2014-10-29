@@ -1,0 +1,3 @@
+colorscheme flattr
+
+set smartindent
