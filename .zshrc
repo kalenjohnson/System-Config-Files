@@ -30,7 +30,7 @@ plugins=(git brew git-flow mysql-macports npm osx sublime)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:~/.composer/vendor/bin
 
 # Kalen's Customizations
 alias ...='nocorrect ...'
