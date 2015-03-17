@@ -6,7 +6,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-export ZSH_THEME="prose"
+export ZSH_THEME="ys"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -30,7 +30,7 @@ plugins=(git brew git-flow mysql-macports npm osx sublime)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:~/.composer/vendor/bin
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:~/.composer/vendor/bin:~/.nvm:~/.rbenv/bin
 
 # Kalen's Customizations
 alias ...='nocorrect ...'
@@ -38,3 +38,7 @@ alias gc='git commit'
 alias gs='git status'
 alias ga='git add'
 alias gp='git push'
+
+export NVM_DIR="/home/kalen/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
