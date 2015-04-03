@@ -30,7 +30,7 @@ plugins=(git brew git-flow mysql-macports npm osx sublime)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:~/.composer/vendor/bin:~/.nvm:~/.rbenv/bin
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:~/.composer/vendor/bin:~/.nvm:~/.rbenv/bin:~/.rbenv/shims:~/.rbenv/completions/rbenv.zsh
 
 # Kalen's Customizations
 alias ...='nocorrect ...'
@@ -39,6 +39,11 @@ alias gs='git status'
 alias ga='git add'
 alias gp='git push'
 
+# Allow you to batch rename files
+autoload -U zmv
+alias mmv='noglob zmv -W'
+
 export NVM_DIR="/home/kalen/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+eval "$(rbenv init -)"
