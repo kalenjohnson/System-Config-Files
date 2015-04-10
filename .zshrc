@@ -25,7 +25,7 @@ export ZSH_THEME="ys"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew git-flow mysql-macports npm osx sublime)
+plugins=(git tmux brew git-flow mysql-macports npm osx sublime)
 
 source $ZSH/oh-my-zsh.sh
 
