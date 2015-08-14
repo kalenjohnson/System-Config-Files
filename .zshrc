@@ -43,7 +43,9 @@ alias gp='git push'
 autoload -U zmv
 alias mmv='noglob zmv -W'
 
-export NVM_DIR="/home/kalen/.nvm"
+export NVM_DIR="/home/kalen/.nvm:/Users/kalenjohnson/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
