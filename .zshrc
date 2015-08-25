@@ -30,7 +30,7 @@ plugins=(git tmux brew git-flow mysql-macports npm osx history-substring-search 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:~/.composer/vendor/bin:~/.nvm:~/.rbenv/bin:~/.rbenv/shims:~/.rbenv/completions/rbenv.zsh:~/.local/bin
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:~/.composer/vendor/bin:~/.nvm:~/.rbenv/bin:~/.rbenv/shims:~/.rbenv/completions/rbenv.zsh:~/.local/bin
 
 # Kalen's Customizations
 alias ...='nocorrect ...'
@@ -43,7 +43,7 @@ alias gp='git push'
 autoload -U zmv
 alias mmv='noglob zmv -W'
 
-export NVM_DIR="/home/kalen/.nvm:/Users/kalenjohnson/.nvm"
+export NVM_DIR="~/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # rbenv
