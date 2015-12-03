@@ -38,6 +38,7 @@ alias gc='git commit'
 alias gs='git status'
 alias ga='git add'
 alias gp='git push'
+alias gclean='git branch --merged | grep -v \* | xargs git branch -D'
 
 # Allow you to batch rename files
 autoload -U zmv
