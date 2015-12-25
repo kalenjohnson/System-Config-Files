@@ -40,11 +40,14 @@ alias ga='git add'
 alias gp='git push'
 alias gclean='git branch --merged | grep -v \* | xargs git branch -D'
 
+# Homestead DB
+alias hdb='mysql -uhomestead -psecret -P33060 -h127.0.0.1'
+
 # Allow you to batch rename files
 autoload -U zmv
 alias mmv='noglob zmv -W'
 
-export NVM_DIR="~/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # rbenv
