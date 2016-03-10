@@ -25,7 +25,7 @@ export ZSH_THEME="ys"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git tmux brew git-flow mysql-macports npm osx history-substring-search  sublime)
+plugins=(git wd tmux brew git-flow mysql-macports npm osx history-substring-search  sublime)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -42,6 +42,11 @@ alias gclean='git branch --merged | grep -v \* | xargs git branch -D'
 
 # Homestead DB
 alias hdb='mysql -uhomestead -psecret -P33060 -h127.0.0.1'
+
+alias homestead='function __homestead() { (cd ~/Homestead && vagrant $*); unset -f __homestead; }; __homestead'
+
+# No ansible SSH cows
+ANSIBLE_NOCOWS=1
 
 # Allow you to batch rename files
 autoload -U zmv
