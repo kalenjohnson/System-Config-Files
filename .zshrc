@@ -46,7 +46,7 @@ alias hdb='mysql -uhomestead -psecret -P33060 -h127.0.0.1'
 alias homestead='function __homestead() { (cd ~/Homestead && vagrant $*); unset -f __homestead; }; __homestead'
 
 # No ansible SSH cows
-ANSIBLE_NOCOWS=1
+export ANSIBLE_NOCOWS=1
 
 # Allow you to batch rename files
 autoload -U zmv
@@ -59,5 +59,3 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-# AWS CLI
-source /usr/local/share/zsh/site-functions/_aws
