@@ -1,3 +1,7 @@
+# Make sure SSH is running
+eval `ssh-agent -s`
+ssh-add
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 export ZSH=$HOME/.oh-my-zsh
@@ -30,7 +34,7 @@ plugins=(git wd tmux brew git-flow mysql-macports npm osx history-substring-sear
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:~/.composer/vendor/bin:~/.nvm:~/.rbenv/bin:~/.rbenv/shims:~/.rbenv/completions/rbenv.zsh:~/.local/bin
+export PATH=/mnt/c/HashiCorp/Vagrant/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:~/.composer/vendor/bin:~/.nvm:~/.rbenv/bin:~/.rbenv/shims:~/.rbenv/completions/rbenv.zsh:~/.local/bin
 
 # Kalen's Customizations
 alias ...='nocorrect ...'
@@ -39,11 +43,8 @@ alias gs='git status'
 alias ga='git add'
 alias gp='git push'
 alias gclean='git branch --merged | grep -v \* | xargs git branch -D'
-
-# Homestead DB
-alias hdb='mysql -uhomestead -psecret -P33060 -h127.0.0.1'
-
-alias homestead='function __homestead() { (cd ~/Homestead && vagrant $*); unset -f __homestead; }; __homestead'
+alias ll='ls -lah'
+alias vagrant='vagrant.exe'
 
 # No ansible SSH cows
 export ANSIBLE_NOCOWS=1
