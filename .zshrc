@@ -34,7 +34,11 @@ plugins=(git wd tmux brew git-flow mysql-macports npm osx history-substring-sear
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/mnt/c/HashiCorp/Vagrant/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:~/.composer/vendor/bin:~/.nvm:~/.rbenv/bin:~/.rbenv/shims:~/.rbenv/completions/rbenv.zsh:~/.local/bin
+export PATH=/mnt/c/HashiCorp/Vagrantbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:~/.composer/vendor/bin:~/.nvm:~/.rbenv/bin:~/.rbenv/shims:~/.rbenv/completions/rbenv.zsh:~/.local/bin:$PATH
+export PATH=/mnt/c/Program\ Files/Oracle/VirtualBox:/mnt/c/Windows/system32:$PATH
+
+# Vagrant WSL fix
+# export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
 
 # Kalen's Customizations
 alias ...='nocorrect ...'
@@ -45,6 +49,8 @@ alias gp='git push'
 alias gclean='git branch --merged | grep -v \* | xargs git branch -D'
 alias ll='ls -lah'
 alias vagrant='vagrant.exe'
+
+alias vssh='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no vagrant@127.0.0.1 -i ./.vagrant/machines/default/virtualbox/private_key -p'
 
 # No ansible SSH cows
 export ANSIBLE_NOCOWS=1
@@ -60,3 +66,24 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+# export MANPATH="/usr/local/man:$MANPATH"
+# You may need to manually set your language environment
+export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+export EDITOR='vim' 
+
+# Compilation flags 
+# export ARCHFLAGS="-arch x86_64"  
+
+# ssh 
+export SSH_KEY_PATH="~/.ssh/rsa_id"  
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs, 
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh 
+# users are encouraged to define aliases within the ZSH_CUSTOM folder. 
+# For a full list of active aliases, run `alias`. 
+# 
+# Example aliases 
+# alias zshconfig="mate ~/.zshrc" 
+# alias ohmyzsh="mate ~/.oh-my-zsh"

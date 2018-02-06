@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/kalen/.oh-my-zsh'
+let g:netrw_dirhist_2='/mnt/c/Windows/System32/drivers'
+let g:netrw_dirhist_3='/mnt/c/Users/me/Work/DiegoDev/iParq/core'
+let g:netrw_dirhist_4='/mnt/c/Users/me/Work/DiegoDev/iParq/core/app'
+let g:netrw_dirhist_5='/mnt/c/Users/me/Work/DiegoDev/iParq/core/app/Http'
+let g:netrw_dirhist_6='/mnt/c/Users/me/Work/DiegoDev/iParq/core/app/Http/Controllers'
+let g:netrw_dirhist_7='/mnt/c/Users/me/Work/DiegoDev/iParq/core/app/Http/Controllers/Api'
+let g:netrw_dirhist_8='/mnt/c/Users/me/Work/DiegoDev/iParq/core/app/Http/Controllers/Api/V1'
+let g:netrw_dirhist_9='/home/kalen/.ssh'
