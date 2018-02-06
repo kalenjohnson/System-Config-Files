@@ -36,9 +36,13 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=/mnt/c/HashiCorp/Vagrantbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:~/.composer/vendor/bin:~/.nvm:~/.rbenv/bin:~/.rbenv/shims:~/.rbenv/completions/rbenv.zsh:~/.local/bin:$PATH
 export PATH=/mnt/c/Program\ Files/Oracle/VirtualBox:/mnt/c/Windows/system32:$PATH
+export PATH=/mnt/c/Program\ Files/Docker\ Toolbox:$PATH
 
 # Vagrant WSL fix
 # export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
+
+# DOCKER
+export DOCKER_HOST=localhost:2375
 
 # Kalen's Customizations
 alias ...='nocorrect ...'
@@ -66,6 +70,7 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+<<<<<<< c57c39c67a7b119b064b48908951df5d3848075e
 # export MANPATH="/usr/local/man:$MANPATH"
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
@@ -87,3 +92,16 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # Example aliases 
 # alias zshconfig="mate ~/.zshrc" 
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+=======
+# Start the docker machine
+export VBOX_MSI_INSTALL_PATH='/c/Program Files/Oracle/VirtualBox/'
+pushd '/c/Program Files/Docker Toolbox/' > /dev/null
+./start.sh exit
+
+# Get env variables from docker-machine, convert paths, ignore comments, and strip double quotes.
+$(./docker-machine.exe env --shell bash | sed 's/C:/\/c/' | sed 's/\\/\//g' | sed 's:#.*$::g' | sed 's/"//g' )
+popd > /dev/null
+
+# Change /mnt/c/ to /c/ in current working directory path
+cd $(pwd | sed 's/\/mnt\/c\//\/c\//')
+>>>>>>> Docker stuff
