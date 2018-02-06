@@ -70,7 +70,6 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-<<<<<<< c57c39c67a7b119b064b48908951df5d3848075e
 # export MANPATH="/usr/local/man:$MANPATH"
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
@@ -92,7 +91,7 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # Example aliases 
 # alias zshconfig="mate ~/.zshrc" 
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-=======
+
 # Start the docker machine
 export VBOX_MSI_INSTALL_PATH='/c/Program Files/Oracle/VirtualBox/'
 pushd '/c/Program Files/Docker Toolbox/' > /dev/null
@@ -104,4 +103,3 @@ popd > /dev/null
 
 # Change /mnt/c/ to /c/ in current working directory path
 cd $(pwd | sed 's/\/mnt\/c\//\/c\//')
->>>>>>> Docker stuff
