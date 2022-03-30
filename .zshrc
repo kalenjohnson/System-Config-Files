@@ -1,6 +1,8 @@
 # Make sure SSH is running
-eval `ssh-agent -s`
-ssh-add
+#eval `ssh-agent -s`
+#ssh-add
+
+ssh-add --apple-use-keychain ~/.ssh/id_rsa
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
@@ -29,20 +31,13 @@ export ZSH_THEME="ys"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git wd tmux brew git-flow mysql-macports npm osx history-substring-search  sublime)
+plugins=(git wd brew git-flow npm macos history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/mnt/c/HashiCorp/Vagrantbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:~/.composer/vendor/bin:~/.nvm:~/.rbenv/bin:~/.rbenv/shims:~/.rbenv/completions/rbenv.zsh:~/.local/bin:$PATH
-export PATH=/mnt/c/Program\ Files/Oracle/VirtualBox:/mnt/c/Windows/system32:$PATH
-export PATH=/mnt/c/Program\ Files/Docker\ Toolbox:$PATH
-
-# Vagrant WSL fix
-# export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
-
-# DOCKER
-export DOCKER_HOST=localhost:2375
+export PATH=~/.composer/vendor/bin:$PATH
+#export PATH=/mnt/c/HashiCorp/Vagrantbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:~/.composer/vendor/bin:~/.nvm:~/.rbenv/bin:~/.rbenv/shims:~/.rbenv/completions/rbenv.zsh:~/.local/bin:$PATH
 
 # Kalen's Customizations
 alias ...='nocorrect ...'
@@ -52,23 +47,13 @@ alias ga='git add'
 alias gp='git push'
 alias gclean='git branch --merged | grep -v \* | xargs git branch -D'
 alias ll='ls -lah'
-alias vagrant='vagrant.exe'
+alias sail='bash vendor/bin/sail'
 
-alias vssh='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no vagrant@127.0.0.1 -i ./.vagrant/machines/default/virtualbox/private_key -p'
-
-# No ansible SSH cows
-export ANSIBLE_NOCOWS=1
+#alias git-clean-branches='git branch -vv | grep \': gone]\'|  grep -v "\*" | awk \'{ print $1; }\' | xargs -r git branch -d'
 
 # Allow you to batch rename files
 autoload -U zmv
 alias mmv='noglob zmv -W'
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 # You may need to manually set your language environment
@@ -92,14 +77,5 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # alias zshconfig="mate ~/.zshrc" 
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Start the docker machine
-export VBOX_MSI_INSTALL_PATH='/c/Program Files/Oracle/VirtualBox/'
-pushd '/c/Program Files/Docker Toolbox/' > /dev/null
-./start.sh exit
-
-# Get env variables from docker-machine, convert paths, ignore comments, and strip double quotes.
-$(./docker-machine.exe env --shell bash | sed 's/C:/\/c/' | sed 's/\\/\//g' | sed 's:#.*$::g' | sed 's/"//g' )
-popd > /dev/null
-
-# Change /mnt/c/ to /c/ in current working directory path
-cd $(pwd | sed 's/\/mnt\/c\//\/c\//')
+#export PATH="/usr/local/opt/openjdk/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
