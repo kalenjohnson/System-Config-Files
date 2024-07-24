@@ -1,9 +1,3 @@
-# Make sure SSH is running
-#eval `ssh-agent -s`
-#ssh-add
-
-ssh-add --apple-use-keychain ~/.ssh/id_rsa
-
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 export ZSH=$HOME/.oh-my-zsh
@@ -31,7 +25,7 @@ export ZSH_THEME="ys"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git wd brew git-flow npm macos history-substring-search)
+plugins=(git wd git-flow npm history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
